@@ -45,14 +45,15 @@ public class ClassePrincipal{
     public void ExibirFuncionariosFuncao(string funcao){
         if(listaFuncionarios.ContainsKey(funcao)){
         CultureInfo formatoDecimal = new CultureInfo("pt-BR")
-        foreach(var funcionario in funcionarios){
-            System.Console.WriteLine(funcionario.Nome);
+            foreach(var funcionario in funcionarios){
+                System.Console.WriteLine(funcionario.Nome);
 
-            string dataFormatada = funcionario.DataNascimento.ToString("dd/MM/yyyy");
-            System.Console.WriteLine(dataFormatada);
+                string dataFormatada = funcionario.DataNascimento.ToString("dd/MM/yyyy");
+                System.Console.WriteLine(dataFormatada);
 
-            string salarioFormatado = funcionario.Salario.ToString("N", formatoDecimal);
-            System.Console.WriteLine(salarioFormatado);
+                string salarioFormatado = funcionario.Salario.ToString("N", formatoDecimal);
+                System.Console.WriteLine(salarioFormatado);
+            }
         }
     }
     // 3.8 – Imprimir os funcionários que fazem aniversário no mês 10 e 12.
@@ -88,3 +89,4 @@ public class ClassePrincipal{
     }
     // 3.11 – Imprimir o total dos salários dos funcionários.
     // 3.12 – Imprimir quantos salários mínimos ganha cada funcionário, considerando que o salário mínimo é R$1212.00.
+}
