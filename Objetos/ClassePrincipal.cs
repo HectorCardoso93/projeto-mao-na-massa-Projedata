@@ -1,22 +1,25 @@
 namespace Dev.Objetos;
 
 using System.Collections.Generic;
+using System.Globalization;
 
 
 // 3 – Deve conter uma classe Principal para executar as seguintes ações:
-public class ClassePrincipal : Pessoa{
+public class ClassePrincipal : Pessoa {
 // 3.1 – Inserir todos os funcionários, na mesma ordem e informações da tabela acima.
     List<Funcionario> funcionarios = new List<Funcionario>();
     // 3.5 – Agrupar os funcionários por função em um MAP, sendo a chave a “função” e o valor a “lista de funcionários”.
     Dictionary<string,List<Funcionario>> listaFuncionarios = new Dictionary<string,List<Funcionario>>();
     
-    public void Adicionar (Funcionario funcionario){
-        funcionarios.Add(funcionario);
+    public void Adicionar (List<Funcionario> variosFuncionarios){
+        foreach(var funcionario in variosFuncionarios){
+            funcionarios.Add(funcionario);
+        }
     }
 
     // 3.2 – Remover o funcionário “João” da lista.
     public void Remover (Funcionario funcionario){
-        if(funcionario.Nome === "João"){
+        if(funcionario.Nome == "João"){
             funcionarios.Remove(funcionario);
         }
     }
@@ -24,7 +27,7 @@ public class ClassePrincipal : Pessoa{
     // • informação de data deve ser exibido no formato dd/mm/aaaa;
     // • informação de valor numérico deve ser exibida no formatado com separador de milhar como ponto e decimal como vírgula.
     public void ExibirFuncionarios(){
-        CultureInfo formatoDecimal = new CultureInfo("pt-BR")
+        CultureInfo formatoDecimal = new CultureInfo("pt-BR");
         foreach(var funcionario in funcionarios){
             System.Console.WriteLine(funcionario.Nome);
 
@@ -39,12 +42,14 @@ public class ClassePrincipal : Pessoa{
     }
     // 3.4 – Os funcionários receberam 10% de aumento de salário, atualizar a lista de funcionários com novo valor.
     public void AtualizacaoSalario(){
-        decimal novoSalario = (funcionarios.Salario * 0.10);
+        foreach(var funcionario in funcionarios){
+            double novoSalario = (funcionario.Salario * 0.10);
+        }
     }
     // 3.6 – Imprimir os funcionários, agrupados por função.
     public void ExibirFuncionariosFuncao(string funcao){
         if(listaFuncionarios.ContainsKey(funcao)){
-        CultureInfo formatoDecimal = new CultureInfo("pt-BR")
+        CultureInfo formatoDecimal = new CultureInfo("pt-BR");
             foreach(var funcionario in funcionarios){
                 System.Console.WriteLine(funcionario.Nome);
 
@@ -70,16 +75,14 @@ public class ClassePrincipal : Pessoa{
     public void ExibirFuncionariosIdade(){
         DateTime dataAtual = DateTime.Now;
         int anoAtual = dataAtual.Year;
-        if(idade >= 18){
-            foreach(var funcionario in funcionarios){
-                int anoNascimento = funcionario.DataNascimento.Year;
-                int idade = (anoAtual - anoNasicmento);
-                if(idade >= 18){
-                    System.Console.WriteLine(funcionario.Nome);
-                    System.Console.WriteLine(idade);
-                } else{
-                    System.Console.WriteLine("Você não é maior de idade.");
-                }
+        foreach(var funcionario in funcionarios){
+            int anoNascimento = funcionario.DataNascimento.Year;
+            int idade = anoAtual - anoNascimento;
+            if(idade >= 18){
+                System.Console.WriteLine(funcionario.Nome);
+                System.Console.WriteLine(idade);
+            } else{
+                System.Console.WriteLine("Você não é maior de idade.");
             }
         }
     }
