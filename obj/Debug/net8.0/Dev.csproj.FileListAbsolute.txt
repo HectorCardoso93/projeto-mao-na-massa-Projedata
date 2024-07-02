@@ -1,0 +1,5 @@
+c:\Users\Hector\Desktop\Area de trabalho\Estudos\Emprego\Dev\obj\Debug\net8.0\Dev.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Hector\Desktop\Area de trabalho\Estudos\Emprego\Dev\obj\Debug\net8.0\Dev.AssemblyInfoInputs.cache
+c:\Users\Hector\Desktop\Area de trabalho\Estudos\Emprego\Dev\obj\Debug\net8.0\Dev.AssemblyInfo.cs
+c:\Users\Hector\Desktop\Area de trabalho\Estudos\Emprego\Dev\obj\Debug\net8.0\Dev.csproj.CoreCompileInputs.cache
+c:\Users\Hector\Desktop\Area de trabalho\Estudos\Emprego\Dev\obj\Debug\net8.0\Dev.sourcelink.json

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 
 // 3 – Deve conter uma classe Principal para executar as seguintes ações:
-public class ClassePrincipal{
+public class ClassePrincipal : Pessoa{
 // 3.1 – Inserir todos os funcionários, na mesma ordem e informações da tabela acima.
     List<Funcionario> funcionarios = new List<Funcionario>();
     // 3.5 – Agrupar os funcionários por função em um MAP, sendo a chave a “função” e o valor a “lista de funcionários”.
