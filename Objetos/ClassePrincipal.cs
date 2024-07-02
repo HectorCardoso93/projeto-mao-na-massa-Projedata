@@ -88,8 +88,25 @@ public class ClassePrincipal : Pessoa {
     }
     // 3.10 – Imprimir a lista de funcionários por ordem alfabética.
     public void ExibirFuncionariosOrdemAlfabetica(){
-        
+        var nomesOrdenados = funcionarios.OrderBy(f => f.Nome);
+        foreach(var nome in nomesOrdenados){
+            System.Console.WriteLine(nome.Nome);
+        }
     }
     // 3.11 – Imprimir o total dos salários dos funcionários.
+    public void ExibirTotalSalario(){
+        double salarioTotal = funcionarios.Sum(f => f.Salario);
+    }
     // 3.12 – Imprimir quantos salários mínimos ganha cada funcionário, considerando que o salário mínimo é R$1212.00.
+    public void ExibirSalariosMinimos(){
+        int salarioMinimo = 0;
+        foreach(var funcionario in funcionarios){
+            if(funcionario.Salario > 1212.00){
+                for(int i = 0; funcionario.Salario > 1212.00; i++){
+                    funcionario.Salario -= 1212.00;
+                    salarioMinimo++;
+                }
+            }
+        }
+    }
 }
