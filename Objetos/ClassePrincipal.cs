@@ -101,9 +101,10 @@ public class ClassePrincipal : Pessoa {
     public void ExibirSalariosMinimos(){
         int salarioMinimo = 0;
         foreach(var funcionario in funcionarios){
-            if(funcionario.Salario > 1212.00){
-                for(int i = 0; funcionario.Salario > 1212.00; i++){
-                    funcionario.Salario -= 1212.00;
+            double salarioTotal = funcionario.Salario;
+            if(salarioTotal > 1212.00){
+                for(int i = 0; salarioTotal > 1212.00; i++){
+                    salarioTotal -= 1212.00;
                     salarioMinimo++;
                 }
             }
