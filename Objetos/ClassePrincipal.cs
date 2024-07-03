@@ -43,7 +43,7 @@ public class ClassePrincipal : Pessoa {
     // 3.4 – Os funcionários receberam 10% de aumento de salário, atualizar a lista de funcionários com novo valor.
     public void AtualizacaoSalario(){
         foreach(var funcionario in funcionarios){
-            double novoSalario = (funcionario.Salario * 0.10);
+            funcionario.Salario *=  0.10;
         }
     }
     // 3.6 – Imprimir os funcionários, agrupados por função.
